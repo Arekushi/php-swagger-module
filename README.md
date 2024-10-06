@@ -6,7 +6,7 @@ Swagger PHP module adapted for Mezzio/Laminas.
 
 ## Requirements
 
-- PHP >7.4
+- PHP >8.1
 - Mezzio\Template\TemplateRendererInterface
 
 ## Installation
@@ -15,19 +15,7 @@ Swagger PHP module adapted for Mezzio/Laminas.
 The preferred way to install this wrapper is through [composer](http://getcomposer.org/download/).
 
 ```bash
-php composer.phar require genxoft/php-swagger-module
-```
-
-or
-
-```bash
-composer require genxoft/php-swagger-module
-```
-
-or add to the require section of `composer.json`
-
-```
-"genxoft/php-swagger-module" : "*"
+composer require arekushi/swagger-php-module:dev-main --ignore-platform-reqs
 ```
 
 ## Setup
