@@ -1,11 +1,15 @@
 {
-    "name": "genxoft/swagger-php-module",
+    "name": "arekushi/swagger-php-module",
     "description": "Swagger-PHP module adapted for mezzio and laminas.",
     "license": "MIT",
     "authors": [
         {
             "name": "Simon Rodin",
             "email": "dev@genxoft.dev"
+        },
+        {
+            "name": "Alexandre Lima",
+            "email": "alexandre.ferreira1445@gmail.com"
         }
     ],
     "require": {
