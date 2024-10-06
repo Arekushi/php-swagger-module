@@ -1,5 +1,5 @@
 {
-    "name": "genxoft/swagger-php-module",
+    "name": "arekushi/swagger-php-module",
     "description": "Swagger-PHP module adapted for mezzio and laminas.",
     "license": "MIT",
     "authors": [
