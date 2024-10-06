@@ -1,16 +1,11 @@
 <?php
-
 /**
- * @var \Laminas\View\Renderer\PhpRenderer $this
  * @var string $oasJsonUrl
  * @var string $basePath
  */
 
 $initScript = <<<JS
 window.onload = function() {
-  //<editor-fold desc="Changeable Configuration Block">
-
-  // the following lines will be replaced by docker/configurator, when it runs in a docker-container
   window.ui = SwaggerUIBundle({
     url: "{$oasJsonUrl}",
     dom_id: '#swagger-ui',
@@ -22,23 +17,29 @@ window.onload = function() {
       SwaggerUIBundle.plugins.DownloadUrl
     ]
   });
-
-  //</editor-fold>
 };
 JS;
-
-
-$this->headTitle("Swagger UI");
-
-$this->headLink()
-    ->appendStylesheet($basePath . 'swagger-ui/swagger-ui.css')
-    ->appendStylesheet($basePath . 'swagger-ui/index.css');
-
-
-$this->inlineScript()
-    ->appendFile($basePath . 'swagger-ui/swagger-ui-bundle.js')
-    ->appendFile($basePath . 'swagger-ui/swagger-ui-standalone-preset.js')
-    ->appendScript($initScript);
-
 ?>
-<div id="swagger-ui"></div>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swagger UI</title>
+    <link rel="stylesheet" href="<?= $basePath; ?>swagger-ui/swagger-ui.css">
+    <link rel="stylesheet" href="<?= $basePath; ?>swagger-ui/index.css">
+</head>
+
+<body>
+    <div id="swagger-ui"></div>
+    <script src="<?= $basePath; ?>swagger-ui/swagger-ui-bundle.js"></script>
+    <script src="<?= $basePath; ?>swagger-ui/swagger-ui-standalone-preset.js"></script>
+
+    <script>
+        <?= $initScript; ?>
+    </script>
+</body>
+
+</html>
